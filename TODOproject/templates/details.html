@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <div class="shadow card">
+                <div class="card-body">
+                    <h5 class="title">{{task.name}}</h5>
+                    <pre><b>{{task.priority}}</b></pre>
+                    <pre><b>{{task.date}}</b></pre>
+                    <a class="btn btn-warning" href="{% url 'update' task.id %}">Update</a>
+                    <a class="btn btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+                </div>
+    </div>
+
+</form>
+</body>
+</html>
